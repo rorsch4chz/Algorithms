@@ -109,4 +109,26 @@ public class QuickSortUtil {
         System.out.println(Arrays.toString(arr));
         return i;
     }
+
+    /**
+     * O(n) 时间复杂度内求无序数组中的第 K 大元素
+     */
+    public static void getValue(int[] arr, int n, int k) {
+        getKValue(arr, 0, n - 1, k);
+    }
+
+    private static void getKValue(int[] arr, int first, int last, int k) {
+
+        if (first >= last) return;
+
+        int p = partition2(arr, first, last);
+
+        if (p + 1 == k) {
+            System.out.println("第 " + k + " 小元素:" + arr[p]);
+        } else if (k > p + 1) {
+            getKValue(arr, p + 1, last, k);
+        } else if (k < p + 1) {
+            getKValue(arr, first, p - 1, k);
+        }
+    }
 }

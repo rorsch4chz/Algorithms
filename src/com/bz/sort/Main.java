@@ -11,5 +11,7 @@ public class Main {
 //        MergeSortUtil.mergeSort(arr, arr.length);
 
         QuickSortUtil.quickSort(arr, arr.length);
+
+//        QuickSortUtil.getValue(arr, arr.length, 8);
     }
 }
